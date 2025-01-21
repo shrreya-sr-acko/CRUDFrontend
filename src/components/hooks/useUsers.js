@@ -31,7 +31,7 @@ const useUsers = () => {
     const addUser = async(data) => {
         try{ 
             const user = await newUser(data);
-            setUser((prev) => [...prev, data])
+            setUser((prev) => [...prev, user])
         }catch(error){
             setError(error)
         }

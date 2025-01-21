@@ -33,7 +33,7 @@ const useFamily = () => {
     const addFamily = async(userId, data) => {
         try{ 
             const fam = await newFamily(userId, data);
-            setFamily((prev) => [...prev, data])
+            setFamily((prev) => [...prev, fam])
         }catch(error){
             setError(error)
         }

@@ -31,6 +31,10 @@ const FamilyListCard = ({fam, onEdit, onDelete}) => {
   const handleForm = () => {
     onEdit(fam.user.id, fam.id, formData);
     setIsEdit(false);
+    setFormData({
+      name : fam.name || "",
+      relation: fam.relation || ""
+    })
   }
 
   return (

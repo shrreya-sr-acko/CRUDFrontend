@@ -23,6 +23,7 @@ const FamilyListPage = () => {
       setUserId(selectedUser.id);
       getFamily(selectedUser.id);
       setIsInvalid(false)
+
     }
     else{
       setIsInvalid(true);
@@ -52,7 +53,7 @@ const FamilyListPage = () => {
         {family && (family.length > 0)?
           family.map((fam) => {
             return (
-                <FamilyListCard fam={fam} onEdit={editFamily} onDelete={deleteFamily}/>
+                <FamilyListCard key={fam.id} fam={{...fam}} onEdit={editFamily} onDelete={deleteFamily}/>
             );
           }): family != null && !isInvalid && <p><i>No family members found</i></p>
         }
