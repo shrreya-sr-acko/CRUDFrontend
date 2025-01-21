@@ -41,9 +41,9 @@ const useFamily = () => {
 
     const editFamily = async(userId, id, data) => {
         try{ 
-            await updateFamily(userId, id, data);
+            const updatedFam = await updateFamily(userId, id, data);
             setFamily((prev) =>
-                prev.map((fam) => (fam.id == id)? {...fam, ...data} : fam)
+                prev.map((fam) => (fam.id == id)? {...fam, ...updatedFam} : fam)
             )
         }catch(error){
             setError(error)
